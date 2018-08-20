@@ -14,10 +14,10 @@
         <div class="col-md-10">
             <h1>Upload Link</h1>
             {%include 'flash.html'%}
-            <form action="{{ url_for('add') }}" method='post' id="add_form">
+            <form action="{{ url_for('add') }}" method='post' style="margin-top: 50px;" id="add_form">
                 <h4>Link Info:</h4>
                 Url:<br>
-                <input class="form-control" required="true" name="url" type="url" placeholder="Link's url" pattern="https?://+[a-z0-9._%+-]+.+[a-z0-9._%+-]" value="http://"><br>
+                <input class="form-control" required="true" name="url" type="url" placeholder="Link's url" pattern="https?://+[a-z0-9._%+-]+.+[a-z0-9._%+-]" oninput="checkUrlInput()" id="url_input" value="http://"><br>
                 Word:<br>
                 <input class="form-control" required="true" name="word" type="text" placeholder="Link's short word"><br>
                 <br><br>

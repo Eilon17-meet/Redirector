@@ -70,7 +70,21 @@ function changeKeyword() {
   document.getElementById('search_a').href = '/search/'+document.getElementById('search_input').value;
 }
 function search_it(event) {
-  if ((event.which || event.keyCode) == 13) {
+  var key = event.which || event.keyCode;
+  if (key == 13) {
     window.location.href = '/search/'+document.getElementById('search_input').value;
+  }
+}
+
+function checkUrlInput() {
+  var u=$('#url_input');
+  if (u.val().slice(0,7)!='http://' && u.val().slice(0,8)!='https://') {
+    u.val(u.val().replace(new RegExp(u.val().slice(0,7),"g"), "http://"));
+  }
+  if (u.val().slice(0,9)=='https:///') {
+    u.val(u.val().replace(new RegExp(u.val().slice(0,9),"g"), "http://"));
+  }
+  if (u.val().slice(0,8)=='http:///') {
+    u.val(u.val().replace(new RegExp(u.val().slice(0,8),"g"), "http://"));
   }
 }
