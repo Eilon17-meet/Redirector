@@ -98,45 +98,6 @@
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
-.post{
-	margin: 0px;
-	border: none;
-	padding: 0px 0px 0px 0px;
-	transition: all 0.1s ease 0s;
-	object-fit: cover;
-	width: 240px;
-	height: 240px;
-	position: relative;
-}
-.post:hover{
-	/*filter: brightness(120%);*/
-	/*width: 300;*/
-	/*height: 100%;*/
-	transform: scale(1.1);
-	z-index: 10;
-	/*object-fit: contain;*/
-	/*position: absolute;*/
-}
-#posts{
-	display: block;
-	width: 720px;
-	transition: all 0.5s ease 0s;
-}
-#posts-btn{
-	color: black;
-	font-weight: normal;
-	transition: all 0.5s ease 0s;
-}
-#feed{
-	display: none;
-	width: 720px;
-	transition: all 0.5s ease 0s;
-}
-#feed-btn{
-	color: darkgrey;
-	font-weight: normal;
-	transition: all 0.5s ease 0s;
-}
 #mainNav{
 	margin-top:10px; 
 }
