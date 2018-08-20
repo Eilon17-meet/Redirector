@@ -1,0 +1,22 @@
+
+<nav class="navbar navbar-default navbar-fixed-top" style="background-color: white; border: none;">
+  <div class="container-fluid">
+    <div class="col-md-1"></div>
+    <div class="navbar-header col-md-3">
+      <a class="navbar-brand" rel="home" href="{{url_for('index')}}"" title="Redirector" style="left:100px; position: relative;">
+            Redirector
+      </a>
+    </div>
+      <div style="top: 8px; left: -10px; position: relative;" class="form-group col-md-3" id="search-form">
+            <div class="search">
+              <input id="search_input" type="text" oninput="changeKeyword()" onkeypress="search_it(event)" name="keyword" class="round">
+              <a id="search_a" href="/search/"><span class="corner glyphicon glyphicon-search" type="submit"></span></a>
+            </div>
+        </div>
+    <ul class="nav navbar-nav col-md-4 pull-right nav-left" style="width: 150px;">
+      <li>
+        <a href="{{url_for('add')}}">Add</a>
+      </li>
+    </ul>
+  </div>
+</nav>

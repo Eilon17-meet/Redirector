@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'head.html' %}
+</head>
+<body>
+<!-- Page Content -->
+{%include 'nav.html'%}
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <h1>Upload Link</h1>
+            {%include 'flash.html'%}
+            <form action="{{ url_for('add') }}" method='post' id="add_form">
+                <h4>Link Info:</h4>
+                Url:<br>
+                <input class="form-control" required="true" name="url" type="url" placeholder="Link's url" pattern="https?://+[a-z0-9._%+-]+.+[a-z0-9._%+-]" value="http://"><br>
+                Word:<br>
+                <input class="form-control" required="true" name="word" type="text" placeholder="Link's short word"><br>
+                <br><br>
+                <div class="col-md-12">
+                    <input class="form-control" type="submit" value="Upload Link">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

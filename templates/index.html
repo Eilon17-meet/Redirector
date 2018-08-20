@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% include 'head.html' %}
+</head>
+<body>
+{% include 'nav.html' %}
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+            <h1>XYZ</h1>
+            {% include 'flash.html' %}
+            <div class="row">
+                {%if links==[]%}
+                <p> No links found.</p>
+                {%else%}
+                <table id="links-table" class="table table-hover" style="margin: 50px;">
+                    <thead>
+                        <th>This Url</th>
+                        <th>Redirects To</th>
+                        <th onclick="sortTable('links-table',2)">Hits</th>
+                        <th onclick="sortTable('links-table',3)">Added in</th>
+                    </thead>
+                    <tbody>
+                    {%for link in links %}
+                        <tr>
+                    
+                            <td>
+                                <a href="{{url_for('go', word=link.word)}}">
+                                    <b>{{request.url_root[:-1]}}{{url_for('go', word=link.word)}}</b>
+                                </a>
+                            </td>
+                            <td>{{link.url}}</td>
+                            <td>{{link.used}}</td>
+                            <td>{{link.timestamp}}</td>
+                        </tr>
+                    {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="col-md-3">
+            <form action="{{url_for('delete_all')}}" method="post">
+                <input type="password" name="password" placeholder="Password">
+                <input type="submit" value="Delete All">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<!-- /.container -->
+{%endif%}
+<div style="margin-top: -40px;">
+</div>
+<script type="text/javascript" src="/static/js/custom.js"></script>
+</body>
+
+
+</html>
